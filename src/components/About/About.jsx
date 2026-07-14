@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import repair1 from "../../assets/Portifolio/repair1.jpg";
 
 export default function About() {
   return (
@@ -17,17 +18,12 @@ export default function About() {
 
         {/* IMAGE */}
         <div className="flex justify-center">
-          <div className="w-full max-w-md h-[450px] rounded-2xl shadow-lg overflow-hidden bg-slate-100 flex items-center justify-center">
-            {/* Replace this with real image */}
-            <p className="text-gray-500">Company Image</p>
-
-            {/* Example if using real image:
+          <div className="w-full max-w-md h-[450px] rounded-2xl shadow-lg overflow-hidden bg-slate-100">
             <img
-              src="/about.jpg"
+              src={repair1}
               alt="Elyse Tech Team"
               className="w-full h-full object-cover"
             />
-            */}
           </div>
         </div>
 

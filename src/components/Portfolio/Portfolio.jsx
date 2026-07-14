@@ -1,34 +1,43 @@
 import { motion } from "framer-motion";
+import repair1 from "../../assets/Portifolio/repair1.jpg";
+import repair2 from "../../assets/Portifolio/repair2.jpg";
+import repair3 from "../../assets/Portifolio/repair3.jpg";
+import repair4 from "../../assets/Portifolio/repair4.jpg";
+import repair5 from "../../assets/Portifolio/repair5.jpg";
+import repair6 from "../../assets/Portifolio/repair6.jpg";
 
 const portfolioItems = [
   {
     title: "Laptop Repair",
     category: "Hardware Repair",
+    image: repair1,
   },
   {
     title: "Phone Repair",
     category: "Mobile Service",
+    image: repair2,
   },
   {
     title: "Software Installation",
     category: "IT Support",
+    image: repair3,
   },
   {
     title: "Network Setup",
     category: "Networking",
+    image: repair4,
   },
   {
     title: "Data Recovery",
     category: "Recovery",
+    image: repair5,
   },
   {
     title: "System Maintenance",
     category: "Maintenance",
+    image: repair6,
   },
 ];
-
-const imageUrl =
-  "https://plus.unsplash.com/premium_photo-1664301887532-328f07bb2c24?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 function Portfolio() {
   return (
@@ -78,7 +87,7 @@ function Portfolio() {
               <div className="overflow-hidden">
 
                 <motion.img
-                  src={imageUrl}
+                  src={item.image}
                   alt={item.title}
                   className="w-full h-64 object-cover"
                   whileHover={{ scale: 1.1 }}

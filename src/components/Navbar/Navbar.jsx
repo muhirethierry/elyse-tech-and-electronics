@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { FaFacebookF, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import logo from "../../assets/logo/logo.png";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -38,14 +39,27 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
 
         {/* Logo */}
-        <div>
-          <h1 className="text-3xl font-bold text-white">
-            <span className="text-cyan-400">ELYSE</span> TECH
-          </h1>
+        <div className="flex items-center">
+          <Link
+            to="home"
+            smooth={true}
+            duration={900}
+            offset={scrollOffset}
+            className="flex items-center gap-3 cursor-pointer"
+          >
+            <img
+              src={logo}
+              alt="Elyse Tech logo"
+              className="h-10 w-auto object-contain"
+            />
+            <div className="leading-tight">
+              <h1 className="text-3xl font-bold text-white">
+                <span className="text-cyan-400">ELYSE</span> TECH
+              </h1>
 
-          <p className="text-xs text-gray-300">
-            Electronics Solution
-          </p>
+              <p className="text-xs text-gray-300">Electronics Solution</p>
+            </div>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
