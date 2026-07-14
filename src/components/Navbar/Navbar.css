@@ -1,0 +1,39 @@
+.active-link {
+  position: relative;
+  color: white;
+}
+
+.active-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background-color: #22d3ee;
+  border-radius: 9999px;
+}
+
+/* Marquee styles for navbar advertise */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee__track {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee__track span {
+  display: inline-block;
+}
+
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
