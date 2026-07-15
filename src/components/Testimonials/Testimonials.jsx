@@ -23,7 +23,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="py-24 bg-slate-100">
+    <section className="py-24 bg-linear-to-b from-slate-50 via-cyan-50 to-white">
       <div className="max-w-7xl mx-auto px-8">
 
         <div className="text-center mb-16">
@@ -41,7 +41,7 @@ function Testimonials() {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition"
+              className="bg-white/90 rounded-2xl shadow-lg p-8 hover:-translate-y-2 transition border border-cyan-100"
             >
 
               <div className="flex mb-4">

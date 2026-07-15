@@ -15,7 +15,7 @@ export default function About() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="bg-white py-24"
+      className="bg-linear-to-br from-white via-cyan-50 to-sky-50 py-24"
     >
       <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
 
@@ -107,10 +107,10 @@ export default function About() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               className="fixed inset-0 flex items-center justify-center z-50 px-4"
             >
-              <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="bg-linear-to-br from-white via-cyan-50 to-sky-50 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
                 
                 {/* Header */}
-                <div className="sticky top-0 bg-gradient-to-r from-cyan-600 to-cyan-700 px-8 py-8 text-white flex justify-between items-start">
+                <div className="sticky top-0 bg-linear-to-r from-cyan-600 to-cyan-700 px-8 py-8 text-white flex justify-between items-start">
                   <div>
                     <h2 className="text-3xl font-bold">About Elyse Tech</h2>
                     <p className="text-cyan-100 mt-2">Professional Electronics & IT Solutions</p>
@@ -143,7 +143,7 @@ export default function About() {
                   <div className="grid grid-cols-2 gap-4">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="bg-gradient-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
+                      className="bg-linear-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
                     >
                       <div className="text-3xl font-bold text-cyan-600">5+</div>
                       <div className="text-gray-600 text-sm mt-1">Years Experience</div>
@@ -151,7 +151,7 @@ export default function About() {
 
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="bg-gradient-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
+                      className="bg-linear-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
                     >
                       <div className="text-3xl font-bold text-cyan-600">1000+</div>
                       <div className="text-gray-600 text-sm mt-1">Clients Served</div>
@@ -159,7 +159,7 @@ export default function About() {
 
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="bg-gradient-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
+                      className="bg-linear-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
                     >
                       <div className="text-3xl font-bold text-cyan-600">500+</div>
                       <div className="text-gray-600 text-sm mt-1">Projects Completed</div>
@@ -167,7 +167,7 @@ export default function About() {
 
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="bg-gradient-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
+                      className="bg-linear-to-br from-cyan-50 to-blue-50 p-5 rounded-xl border border-cyan-200"
                     >
                       <div className="text-3xl font-bold text-cyan-600">99%</div>
                       <div className="text-gray-600 text-sm mt-1">Satisfaction Rate</div>

@@ -115,7 +115,7 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <section id="services" className="py-20 md:py-24 bg-slate-50">
+    <section id="services" className="py-20 md:py-24 bg-linear-to-b from-slate-50 via-cyan-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -157,30 +157,30 @@ export default function Services() {
                 y: -10,
                 scale: 1.03,
               }}
-              className="group relative overflow-hidden rounded-2xl shadow-lg border border-gray-100 bg-white transition-all h-full flex flex-col"
+              className="group relative overflow-hidden rounded-2xl shadow-lg border border-cyan-100/70 bg-slate-900 transition-all h-full flex flex-col ring-1 ring-white/10"
             >
               <div
-                className="absolute inset-0 bg-cover bg-center opacity-100 transition-all duration-300 md:opacity-0 md:group-hover:opacity-100"
+                className="absolute inset-0 bg-cover bg-center scale-105 transition-all duration-300 md:opacity-100 md:group-hover:scale-110"
                 style={{ backgroundImage: `url(${service.image})` }}
               />
-              <div className="absolute inset-0 bg-slate-950/75 opacity-100 transition-all duration-300 md:bg-slate-950/80 md:opacity-0 md:group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-linear-to-br from-slate-950/85 via-slate-900/70 to-cyan-950/80 transition-all duration-300" />
 
               <div className="relative z-10 p-6 sm:p-8 flex flex-col h-full">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 mb-6 transition-all group-hover:bg-white/20 group-hover:text-white">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-cyan-400/20 backdrop-blur-sm flex items-center justify-center text-cyan-100 mb-6 transition-all group-hover:bg-white group-hover:text-cyan-700 shadow-lg">
                   {service.icon}
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 transition-colors group-hover:text-white">
+                <h3 className="text-xl sm:text-2xl font-bold text-white drop-shadow-sm transition-colors">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-600 mt-4 leading-7 grow transition-colors group-hover:text-slate-100">
+                <p className="mt-4 leading-7 grow text-slate-100 drop-shadow-sm transition-colors">
                   {service.description}
                 </p>
 
                 <button
                   onClick={() => setSelectedService(service)}
-                  className="mt-6 cursor-pointer text-cyan-600 font-semibold hover:text-cyan-700 self-start transition-colors group-hover:text-white"
+                  className="mt-6 cursor-pointer text-cyan-300 font-semibold hover:text-white self-start transition-colors"
                 >
                   Learn More →
                 </button>

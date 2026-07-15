@@ -41,7 +41,7 @@ const portfolioItems = [
 
 function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 bg-white">
+    <section id="portfolio" className="py-24 bg-linear-to-b from-white via-cyan-50 to-sky-50">
       <div className="max-w-7xl mx-auto px-8">
 
         <motion.div
@@ -81,7 +81,7 @@ function Portfolio() {
                 y: -12,
                 scale: 1.03,
               }}
-              className="rounded-2xl overflow-hidden shadow-lg bg-white"
+              className="rounded-2xl overflow-hidden shadow-lg bg-linear-to-b from-white via-cyan-50 to-sky-50 border border-cyan-100"
             >
 
               <div className="overflow-hidden">

@@ -51,7 +51,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-linear-to-b from-sky-50 via-white to-cyan-50">
       <div className="max-w-7xl mx-auto px-8">
 
         {/* Section Heading */}

@@ -54,10 +54,10 @@ function StatCard({ stat, start }) {
         boxShadow: "0px 20px 40px rgba(0, 255, 255, 0.25)",
       }}
       className="
-        bg-white rounded-2xl p-8 text-center
+        bg-white/95 rounded-2xl p-8 text-center
         shadow-lg transition-all duration-300
         hover:shadow-cyan-400/40
-        border border-transparent hover:border-cyan-400
+        border border-cyan-100 hover:border-cyan-400
         relative z-10
       "
     >
