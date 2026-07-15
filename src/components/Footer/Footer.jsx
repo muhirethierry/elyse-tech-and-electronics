@@ -64,8 +64,24 @@ function Footer() {
           </h3>
 
           <div className="flex gap-5 text-2xl">
-            <FaFacebookF className="cursor-pointer hover:text-cyan-500 transition"/>
-            <FaInstagram className="cursor-pointer hover:text-cyan-500 transition"/>
+            <a
+              href="https://facebook.com/elysetechsolution"
+              target="_blank"
+              rel="noreferrer"
+              className="cursor-pointer hover:text-cyan-500 transition"
+              aria-label="Visit Elyse Tech Facebook page"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="https://instagram.com/elysetechsolution"
+              target="_blank"
+              rel="noreferrer"
+              className="cursor-pointer hover:text-cyan-500 transition"
+              aria-label="Visit Elyse Tech Instagram page"
+            >
+              <FaInstagram />
+            </a>
           </div>
         </div>
 

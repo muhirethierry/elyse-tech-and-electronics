@@ -112,6 +112,7 @@ function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 className="w-12 h-12 rounded-full bg-cyan-600 text-white flex items-center justify-center hover:bg-cyan-700 transition"
+                aria-label="Visit Elyse Tech Facebook page"
               >
                 <FaFacebookF size={20} />
               </a>
@@ -121,6 +122,7 @@ function Contact() {
                 target="_blank"
                 rel="noreferrer"
                 className="w-12 h-12 rounded-full bg-cyan-600 text-white flex items-center justify-center hover:bg-cyan-700 transition"
+                aria-label="Visit Elyse Tech Instagram page"
               >
                 <FaInstagram size={20} />
               </a>
