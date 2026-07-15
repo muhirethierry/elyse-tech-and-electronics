@@ -6,6 +6,7 @@ function Contact() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState(null);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -28,13 +29,25 @@ function Contact() {
       return;
     }
     setErrors({});
+    setSubmitError("");
     setStatus("sending");
 
-    // Simulate submission — replace with real endpoint (Formspree, Netlify, etc.)
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await response.json();
+
+      if (!response.ok) throw new Error(data.error || "Message could not be sent.");
+
       setStatus("success");
       setForm({ name: "", email: "", subject: "", message: "" });
-    }, 900);
+    } catch (error) {
+      setStatus("error");
+      setSubmitError(error.message || "Message could not be sent. Please try again later.");
+    }
   };
 
   return (
@@ -66,7 +79,9 @@ function Contact() {
               <Phone className="text-cyan-600" size={32} />
               <div>
                 <h3 className="font-bold text-lg">Phone</h3>
-                <p className="text-gray-600">+250 790 059 779</p>
+                <a className="text-gray-600 hover:text-cyan-700" href="tel:+250790059779">
+                  +250 790 059 779
+                </a>
               </div>
             </div>
 
@@ -84,9 +99,9 @@ function Contact() {
               <Mail className="text-cyan-600" size={32} />
               <div>
                 <h3 className="font-bold text-lg">Email</h3>
-                <p className="text-gray-600">
-                  info@elysetech.com
-                </p>
+                <a className="text-gray-600 hover:text-cyan-700" href="mailto:tmuhire06@gmail.com">
+                  tmuhire06@gmail.com
+                </a>
               </div>
             </div>
 
@@ -175,7 +190,9 @@ function Contact() {
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>
-              {status === "success" && <p className="text-sm text-green-600 mt-3">Message sent — we will reply soon.</p>}
+              {status === "sending" && <p className="text-sm text-gray-600 mt-3" role="status">Sending your message...</p>}
+              {status === "success" && <p className="text-sm text-green-600 mt-3" role="status">Message sent — we will reply soon.</p>}
+              {status === "error" && <p className="text-sm text-red-600 mt-3" role="alert">{submitError}</p>}
             </div>
 
           </form>

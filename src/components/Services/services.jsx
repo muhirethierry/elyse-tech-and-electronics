@@ -115,8 +115,8 @@ export default function Services() {
   const [selectedService, setSelectedService] = useState(null);
 
   return (
-    <section id="services" className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="services" className="py-20 md:py-24 bg-slate-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <motion.div
@@ -130,11 +130,11 @@ export default function Services() {
             Our Services
           </p>
 
-          <h2 className="text-5xl font-bold text-slate-900 mt-3">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mt-3">
             We Repair, Install & Support
           </h2>
 
-          <p className="text-gray-600 mt-5 max-w-2xl mx-auto">
+          <p className="text-gray-600 mt-5 max-w-2xl mx-auto text-sm sm:text-base">
             Elyse Tech provides professional electronics repair and IT
             solutions for individuals, schools, offices, and businesses
             across Rwanda.
@@ -142,7 +142,7 @@ export default function Services() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-max">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 auto-rows-max">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -165,12 +165,12 @@ export default function Services() {
               />
               <div className="absolute inset-0 bg-slate-950/75 opacity-100 transition-all duration-300 md:bg-slate-950/80 md:opacity-0 md:group-hover:opacity-100" />
 
-              <div className="relative z-10 p-8 flex flex-col h-full">
-                <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 mb-6 transition-all group-hover:bg-white/20 group-hover:text-white">
+              <div className="relative z-10 p-6 sm:p-8 flex flex-col h-full">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 mb-6 transition-all group-hover:bg-white/20 group-hover:text-white">
                   {service.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 transition-colors group-hover:text-white">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 transition-colors group-hover:text-white">
                   {service.title}
                 </h3>
 

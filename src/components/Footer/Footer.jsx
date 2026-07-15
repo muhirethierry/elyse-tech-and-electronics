@@ -45,7 +45,9 @@ function Footer() {
 
             <div className="flex gap-3">
               <Mail size={18}/>
-              <span>info@elysetech.com</span>
+              <a className="hover:text-cyan-400 transition" href="mailto:tmuhire06@gmail.com">
+                tmuhire06@gmail.com
+              </a>
             </div>
 
             <div className="flex gap-3">
@@ -70,7 +72,7 @@ function Footer() {
       </div>
 
       <div className="border-t border-slate-700 mt-12 pt-6 text-center text-gray-400">
-        © 2026 Elyse Tech. All Rights Reserved.
+        Copyright 2026 Elyse Tech. All Rights Reserved.
       </div>
     </footer>
   );

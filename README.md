@@ -1,4 +1,15 @@
-# React + Vite
+# Elyse Tech
+
+## Contact-form delivery
+
+The contact form posts to the included Express server, which sends messages to `tmuhire06@gmail.com` using [Resend](https://resend.com). The Resend key is kept only on the server.
+
+1. Copy `.env.example` to `.env` and set `RESEND_API_KEY`.
+2. In Resend, verify the domain used by `MAIL_FROM` and use an address from that domain.
+3. For local development, run `npm run server` in one terminal and `npm run dev` in another.
+4. For production, run `npm run build`, then `npm start`. Deploy it to a host that supports a persistent Node/Express server.
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

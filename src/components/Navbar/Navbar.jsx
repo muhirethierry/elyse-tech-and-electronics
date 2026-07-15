@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaFacebookF, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/logo/logo.png";
 
 function Navbar() {
@@ -82,29 +82,6 @@ function Navbar() {
           ))}
   
         </ul>
-
-        {/* Right Side */}
-        <div className="hidden md:flex items-center">
-
-          {/* Marquee Advertise */}
-          <div className="ml-4">
-            <Link
-              to="contact"
-              smooth={true}
-              duration={900}
-              offset={scrollOffset}
-              className="block"
-            >
-              <div className="marquee w-48 md:w-64">
-                <div className="marquee__track">
-                  <span className="mr-8">Advertise here — Contact us for placement!</span>
-                  <span className="mr-8">Advertise here — Contact us for placement!</span>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-        </div>
 
         {/* Mobile Button */}
         <button
