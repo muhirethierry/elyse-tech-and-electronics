@@ -56,16 +56,16 @@ function Contact() {
 
         {/* Section Heading */}
         <div className="text-center mb-16">
-          <p className="text-cyan-600 uppercase tracking-widest">
+          <p className="text-cyan-600 uppercase tracking-widest font-semibold">
             Contact Us
           </p>
 
           <h2 className="text-5xl font-bold text-slate-900 mt-3">
-            Get In Touch
+            Let’s Talk About Your Project
           </h2>
 
-          <p className="text-gray-600 mt-4">
-            We'd love to hear from you. Contact us for professional IT and electronics services.
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            Share your requirements and we’ll get back to you with the right solution for your IT, electronics, and tech support needs.
           </p>
         </div>
 
@@ -73,9 +73,9 @@ function Contact() {
         <div className="grid lg:grid-cols-2 gap-12">
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-4">
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 rounded-2xl bg-white p-5 shadow-sm border border-cyan-100">
               <Phone className="text-cyan-600" size={32} />
               <div>
                 <h3 className="font-bold text-lg">Phone</h3>
@@ -85,7 +85,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 rounded-2xl bg-white p-5 shadow-sm border border-cyan-100">
               <MapPin className="text-cyan-600" size={32} />
               <div>
                 <h3 className="font-bold text-lg">Location</h3>
@@ -95,7 +95,7 @@ function Contact() {
               </div>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 rounded-2xl bg-white p-5 shadow-sm border border-cyan-100">
               <Mail className="text-cyan-600" size={32} />
               <div>
                 <h3 className="font-bold text-lg">Email</h3>
@@ -131,15 +131,17 @@ function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+          <form className="space-y-5 rounded-3xl bg-white p-6 shadow-xl border border-cyan-100" onSubmit={handleSubmit} noValidate>
 
             <div>
+              <label htmlFor="name" className="mb-2 block text-sm font-semibold text-slate-700">Name</label>
               <input
+                id="name"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
                 type="text"
-                placeholder="Your Name"
+                placeholder="Enter your full name"
                 aria-label="Your Name"
                 className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
@@ -147,12 +149,14 @@ function Contact() {
             </div>
 
             <div>
+              <label htmlFor="email" className="mb-2 block text-sm font-semibold text-slate-700">Email</label>
               <input
+                id="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
                 type="email"
-                placeholder="Your Email"
+                placeholder="Enter your email address"
                 aria-label="Your Email"
                 className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
@@ -160,24 +164,28 @@ function Contact() {
             </div>
 
             <div>
+              <label htmlFor="subject" className="mb-2 block text-sm font-semibold text-slate-700">Subject</label>
               <input
+                id="subject"
                 name="subject"
                 value={form.subject}
                 onChange={handleChange}
                 type="text"
-                placeholder="Subject"
+                placeholder="What would you like to discuss?"
                 aria-label="Subject"
                 className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
 
             <div>
+              <label htmlFor="message" className="mb-2 block text-sm font-semibold text-slate-700">Message</label>
               <textarea
+                id="message"
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 rows="6"
-                placeholder="Your Message"
+                placeholder="Tell us about your project or question"
                 aria-label="Your Message"
                 className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               ></textarea>
@@ -190,10 +198,10 @@ function Contact() {
                 className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-4 rounded-xl transition font-semibold"
                 disabled={status === "sending"}
               >
-                {status === "sending" ? "Sending..." : "Send Message"}
+                {status === "sending" ? "Sending..." : "Send Inquiry"}
               </button>
               {status === "sending" && <p className="text-sm text-gray-600 mt-3" role="status">Sending your message...</p>}
-              {status === "success" && <p className="text-sm text-green-600 mt-3" role="status">Message sent — we will reply soon.</p>}
+              {status === "success" && <p className="text-sm text-green-600 mt-3" role="status">Thanks! Your message has been sent successfully. We’ll reply within 24 hours.</p>}
               {status === "error" && <p className="text-sm text-red-600 mt-3" role="alert">{submitError}</p>}
             </div>
 
