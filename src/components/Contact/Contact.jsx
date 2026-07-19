@@ -1,7 +1,12 @@
+// cSpell:words Nyamata Bugesera Elyse
+
 import { useState } from "react";
 import { Phone, MapPin, Mail, Send } from "lucide-react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneInput, {
+  isValidPhoneNumber,
+} from "react-phone-number-input";
+import flags from "react-phone-number-input/flags";
 import "react-phone-number-input/style.css";
 
 const initialForm = {
@@ -67,7 +72,9 @@ function Contact() {
 
     if (!form.email.trim()) {
       newErrors.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(form.email.trim())) {
+    } else if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(form.email.trim())
+    ) {
       newErrors.email = "Please enter a valid email address.";
     }
 
@@ -94,6 +101,26 @@ function Contact() {
     }
 
     return newErrors;
+  };
+
+  const getErrorMessage = (data, fallbackMessage) => {
+    if (typeof data?.error === "string") {
+      return data.error;
+    }
+
+    if (
+      data?.error &&
+      typeof data.error === "object" &&
+      typeof data.error.message === "string"
+    ) {
+      return data.error.message;
+    }
+
+    if (typeof data?.message === "string") {
+      return data.message;
+    }
+
+    return fallbackMessage;
   };
 
   const handleSubmit = async (event) => {
@@ -143,15 +170,18 @@ function Contact() {
         const responseText = await response.text();
 
         if (responseText) {
-          data = { message: responseText };
+          data = {
+            message: responseText,
+          };
         }
       }
 
       if (!response.ok) {
         throw new Error(
-          data.error ||
-            data.message ||
+          getErrorMessage(
+            data,
             "Your message could not be sent. Please try again."
+          )
         );
       }
 
@@ -173,10 +203,9 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-sky-50 via-white to-cyan-50 py-20 sm:py-24"
+      className="bg-linear-to-b from-sky-50 via-white to-cyan-50 py-20 sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section heading */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
           <p className="font-semibold uppercase tracking-widest text-cyan-600">
             Contact Us
@@ -193,9 +222,7 @@ function Contact() {
           </p>
         </div>
 
-        {/* Contact information and form */}
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
-          {/* Contact information */}
           <div className="space-y-5">
             <div className="flex items-center gap-5 rounded-2xl border border-cyan-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-cyan-100">
@@ -204,6 +231,7 @@ function Contact() {
 
               <div>
                 <h3 className="text-lg font-bold text-slate-900">Phone</h3>
+
                 <a
                   href="tel:+250790059779"
                   className="text-gray-600 transition hover:text-cyan-700"
@@ -220,7 +248,10 @@ function Contact() {
 
               <div>
                 <h3 className="text-lg font-bold text-slate-900">Location</h3>
-                <p className="text-gray-600">Nyamata, Bugesera, Rwanda</p>
+
+                <p className="text-gray-600">
+                  Nyamata, Bugesera, Rwanda
+                </p>
               </div>
             </div>
 
@@ -231,6 +262,7 @@ function Contact() {
 
               <div className="min-w-0">
                 <h3 className="text-lg font-bold text-slate-900">Email</h3>
+
                 <a
                   href="mailto:tmuhire06@gmail.com"
                   className="break-all text-gray-600 transition hover:text-cyan-700"
@@ -240,7 +272,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Social media */}
             <div className="flex gap-4 pt-3">
               <a
                 href="https://facebook.com/elysetechsolution"
@@ -264,7 +295,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* Contact form */}
           <form
             className="space-y-5 rounded-3xl border border-cyan-100 bg-white p-6 shadow-xl sm:p-8"
             onSubmit={handleSubmit}
@@ -361,12 +391,15 @@ function Contact() {
                   id="phone"
                   international
                   defaultCountry="RW"
+                  flags={flags}
                   value={phone}
                   onChange={handlePhoneChange}
                   placeholder="Enter telephone number"
                   countryCallingCodeEditable={false}
                   aria-invalid={Boolean(errors.phone)}
-                  aria-describedby={errors.phone ? "phone-error" : undefined}
+                  aria-describedby={
+                    errors.phone ? "phone-error" : undefined
+                  }
                   className="phone-input-custom"
                 />
               </div>
@@ -436,7 +469,9 @@ function Contact() {
                 type="text"
                 placeholder="What would you like to discuss?"
                 aria-invalid={Boolean(errors.subject)}
-                aria-describedby={errors.subject ? "subject-error" : undefined}
+                aria-describedby={
+                  errors.subject ? "subject-error" : undefined
+                }
                 className={`w-full rounded-xl border p-4 outline-none transition focus:ring-2 ${
                   errors.subject
                     ? "border-red-500 focus:border-red-500 focus:ring-red-200"
@@ -471,7 +506,9 @@ function Contact() {
                 rows={6}
                 placeholder="Tell us about your project or question"
                 aria-invalid={Boolean(errors.message)}
-                aria-describedby={errors.message ? "message-error" : undefined}
+                aria-describedby={
+                  errors.message ? "message-error" : undefined
+                }
                 className={`w-full resize-y rounded-xl border p-4 outline-none transition focus:ring-2 ${
                   errors.message
                     ? "border-red-500 focus:border-red-500 focus:ring-red-200"
@@ -529,7 +566,6 @@ function Contact() {
           </form>
         </div>
 
-        {/* Google map */}
         <div className="mt-16">
           <h3 className="mb-8 text-center text-3xl font-bold text-slate-900">
             Find Our Location
